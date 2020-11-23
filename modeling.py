@@ -4,7 +4,9 @@ from __future__ import print_function
 
 import numpy as np
 import tensorflow as tf
+from absl import flags
 
+FLAGS = flags.FLAGS
 
 def gelu(x):
   """Gaussian Error Linear Unit.
@@ -233,6 +235,13 @@ def relative_positional_encoding(qlen, klen, d_model, clamp_len, attn_type,
 
     if bsz is not None:
       # With bi_data, the batch size should be divisible by 2.
+      """ print("fareed")
+      print(bsz+1)
+      print("fareed") """
+      #exit()
+      #fareed
+      bsz = int(FLAGS.train_batch_size / FLAGS.num_core_per_host)
+      #end fareed
       assert bsz%2 == 0
       fwd_pos_emb = positional_embedding(fwd_pos_seq, inv_freq, bsz//2)
       bwd_pos_emb = positional_embedding(bwd_pos_seq, inv_freq, bsz//2)

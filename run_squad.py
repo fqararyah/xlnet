@@ -77,7 +77,7 @@ flags.DEFINE_string("init_checkpoint", default=None,
 flags.DEFINE_bool("init_global_vars", default=False,
                   help="If true, init all global vars. If false, init "
                   "trainable vars only.")
-flags.DEFINE_string("output_dir", default="",
+flags.DEFINE_string("output_dir", default="./2/pretraining_output",
                     help="Output dir for TF records.")
 flags.DEFINE_string("predict_dir", default="",
                     help="Dir for predictions.")
