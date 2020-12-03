@@ -1,5 +1,4 @@
 # --record_info_dir=/home/nahmad/models/xlnet/data/1/tfrecords
-
 #nvprof --track-memory-allocations off --unified-memory-profiling off --print-gpu-trace --csv --log-file ./durations.csv \
 python3 train_gpu.py \
   --record_info_dir=/home/nahmad/models/xlnet/data_small/tfrecords \
